@@ -1,9 +1,11 @@
-import React from 'react'
-
-const SideColumn = () => {
+import React from "react";
+import styles from "./SideColumn.module.css";
+const SideColumn = ({ imgSrc, imgAlt }) => {
   return (
-    <div>SideColumn</div>
-  )
-}
+    <div className={styles.main}>
+      <img className={styles.img} src={imgSrc} alt={imgAlt} />
+    </div>
+  );
+};
 
-export default SideColumn
+export default SideColumn;
