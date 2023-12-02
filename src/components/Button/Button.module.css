@@ -11,6 +11,7 @@
 }
 .main:hover {
   cursor: pointer;
+  background-color: orange;
 }
 
 .text {

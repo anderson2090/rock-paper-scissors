@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./Finger.module.css";
+import stylesRed from "./FingerRed.module.css";
 import VerticleLine from "../VerticleLine/VerticleLine";
+import { useRecoilState } from "recoil";
+import { isPlayingStateAtom } from "../atoms/atoms";
 const Finger = ({ pImgSrc, pImgAlt, sImgSrc, sImgAlt, text }) => {
+  const [isPlaying, setPlaying] = useRecoilState(isPlayingStateAtom);
+
   return (
-    <div className={styles.main}>
+    <div className={`${!isPlaying ? styles.main : stylesRed.main}`}>
       <VerticleLine height={20} />
       <img className={styles.imgOne} src={pImgSrc} alt={pImgAlt} />
       <VerticleLine height={20} />
