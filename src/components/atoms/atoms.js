@@ -16,6 +16,11 @@ export const computerChoiceAtom = atom({
 });
 
 export const userPointsStateAtom = atom({
-  key: 'userPointsState',
+  key: "userPointsStateAtom",
+  default: 0,
+});
+
+export const computerPointsStateAtom = atom({
+  key: "computerPointsStateAtom",
   default: 0,
 });

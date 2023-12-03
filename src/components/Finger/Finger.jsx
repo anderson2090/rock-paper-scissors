@@ -5,6 +5,7 @@ import VerticleLine from "../VerticleLine/VerticleLine";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
   computerChoiceAtom,
+  computerPointsStateAtom,
   isPlayingStateAtom,
   userChoiceAtom,
   userPointsStateAtom,
@@ -19,6 +20,9 @@ const Finger = ({ pImgSrc, pImgAlt, sImgSrc, sImgAlt, text }) => {
 
   const winner = useRecoilValue(determineWinnerSelector);
   const [userPoints, setUserPoints] = useRecoilState(userPointsStateAtom);
+  const [computerPoints, setComputerPoints] = useRecoilState(
+    computerPointsStateAtom
+  );
   const clickHandler = () => {
     if (isPlaying) {
       setUserChoice(text);
@@ -26,6 +30,10 @@ const Finger = ({ pImgSrc, pImgAlt, sImgSrc, sImgAlt, text }) => {
 
       if (winner === "user") {
         setUserPoints(userPoints + 1);
+      }
+
+      if (winner === "computer") {
+        setComputerPoints(computerPoints + 1);
       }
     }
   };

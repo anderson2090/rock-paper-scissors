@@ -1,6 +1,7 @@
 import { selector } from "recoil";
 import {
   computerChoiceAtom,
+  computerPointsStateAtom,
   userChoiceAtom,
   userPointsStateAtom,
 } from "../atoms/atoms";
@@ -27,5 +28,19 @@ export const userPointsSelector = selector({
     }
 
     return userPoints;
+  },
+});
+
+export const computerPointsSelector = selector({
+  key: "computerPointsSelector",
+  get: ({ get }) => {
+    let computerPoints = get(computerPointsStateAtom);
+    const winner = get(determineWinnerSelector);
+
+    if (winner === "computer") {
+      computerPoints++;
+    }
+
+    return computerPoints;
   },
 });
