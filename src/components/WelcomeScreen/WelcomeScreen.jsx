@@ -4,12 +4,14 @@ import MiddleColumn from "../MiddleColumn/MiddleColumn";
 import styles from "./WelcomeScreen.module.css";
 import guy from "../../images/guy.png";
 import computer from "../../images/the-computer.png";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { computerChoiceAtom, userChoiceAtom } from "../atoms/atoms";
+import { userPointsSelector } from "../selectors/selectors";
 const WelcomeScreen = () => {
   const [userChoice, setUserChoice] = useRecoilState(userChoiceAtom);
   const [computerChoice, setComputerChoice] =
     useRecoilState(computerChoiceAtom);
+  const userPoints = useRecoilValue(userPointsSelector);
 
   return (
     <div className={styles.main}>
@@ -18,6 +20,7 @@ const WelcomeScreen = () => {
         imgSrc={guy}
         imgAlt={"A guy"}
         choice={userChoice}
+        points={userPoints}
       />
       <MiddleColumn />
       <SideColumn

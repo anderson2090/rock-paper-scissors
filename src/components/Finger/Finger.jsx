@@ -7,6 +7,7 @@ import {
   computerChoiceAtom,
   isPlayingStateAtom,
   userChoiceAtom,
+  userPointsStateAtom,
 } from "../atoms/atoms";
 import { computersChoice } from "../../utils/utils";
 import { determineWinnerSelector } from "../selectors/selectors";
@@ -16,13 +17,16 @@ const Finger = ({ pImgSrc, pImgAlt, sImgSrc, sImgAlt, text }) => {
   const [computerChoice, setComputerChoice] =
     useRecoilState(computerChoiceAtom);
 
-  
-
+  const winner = useRecoilValue(determineWinnerSelector);
+  const [userPoints, setUserPoints] = useRecoilState(userPointsStateAtom);
   const clickHandler = () => {
     if (isPlaying) {
       setUserChoice(text);
       setComputerChoice(computersChoice());
-      
+
+      if (winner === "user") {
+        setUserPoints(userPoints + 1);
+      }
     }
   };
 

@@ -14,3 +14,8 @@ export const computerChoiceAtom = atom({
   key: "computerChoiceAtom",
   default: null,
 });
+
+export const userPointsStateAtom = atom({
+  key: 'userPointsState',
+  default: 0,
+});
