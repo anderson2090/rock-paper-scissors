@@ -7,9 +7,9 @@ import computer from "../../images/the-computer.png";
 const WelcomeScreen = () => {
   return (
     <div className={styles.main}>
-      <SideColumn imgSrc={guy} imgAlt={"A guy"} />
+      <SideColumn id={"user"} imgSrc={guy} imgAlt={"A guy"} />
       <MiddleColumn />
-      <SideColumn imgSrc={computer} imgAlt={"The Computer"} />
+      <SideColumn id={"computer"} imgSrc={computer} imgAlt={"The Computer"} />
     </div>
   );
 };
