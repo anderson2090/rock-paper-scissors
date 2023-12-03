@@ -61,3 +61,19 @@ export const computerPointsSelector = selector({
     return computerPoints;
   },
 });
+
+export const gameWinnerSelector = selector({
+  key: "gameWinnerSelector",
+  get: ({ get }) => {
+    const userPoints = get(userPointsSelector);
+    const computerPoints = get(computerPointsSelector);
+
+    if (userPoints >= 5) {
+      return "The User wins the game!";
+    } else if (computerPoints >= 5) {
+      return "The Computer wins the game!";
+    } else {
+      return null;
+    }
+  },
+});

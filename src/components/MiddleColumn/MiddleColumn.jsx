@@ -4,11 +4,15 @@ import styles from "./MiddleColumn.module.css";
 import Button from "../Button/Button";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { isPlayingStateAtom } from "../atoms/atoms";
-import { determineWinnerSelector, winnerStringSelector } from "../selectors/selectors";
+import {
+  determineWinnerSelector,
+  winnerStringSelector,
+} from "../selectors/selectors";
 const MiddleColumn = () => {
   const [isPlaying, setPlaying] = useRecoilState(isPlayingStateAtom);
   const winner = useRecoilValue(determineWinnerSelector);
-  const winnerString = useRecoilValue(winnerStringSelector)
+  const winnerString = useRecoilValue(winnerStringSelector);
+
   return (
     <div className={styles.main}>
       {isPlaying && (
