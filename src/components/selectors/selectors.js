@@ -17,6 +17,23 @@ export const determineWinnerSelector = selector({
   },
 });
 
+export const winnerStringSelector = selector({
+  key: "winnerString",
+  get: ({ get }) => {
+    const winner = get(determineWinnerSelector);
+
+    if (winner === "user") {
+      return "The User Wins!";
+    } else if (winner === "computer") {
+      return "The Computer Wins!";
+    } else if (winner === "tie") {
+      return "It's a tie";
+    } else {
+      return "";
+    }
+  },
+});
+
 export const userPointsSelector = selector({
   key: "userPointsSelector",
   get: ({ get }) => {
