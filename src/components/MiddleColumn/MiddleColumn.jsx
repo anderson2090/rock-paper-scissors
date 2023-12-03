@@ -26,6 +26,9 @@ const MiddleColumn = () => {
           }}
         />
       )}
+      {isPlaying && (
+        <>{!winner && <p className={styles.text}>First to 5 points wins.</p>}</>
+      )}
     </div>
   );
 };
