@@ -14,14 +14,14 @@ const WelcomeScreen = () => {
   return (
     <div className={styles.main}>
       <SideColumn
-        id={"user"}
+        character={"You"}
         imgSrc={guy}
         imgAlt={"A guy"}
         choice={userChoice}
       />
       <MiddleColumn />
       <SideColumn
-        id={"computer"}
+        character={"The Computer"}
         imgSrc={computer}
         imgAlt={"The Computer"}
         choice={computerChoice}

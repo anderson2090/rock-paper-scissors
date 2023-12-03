@@ -6,15 +6,15 @@ export const determineWinner = (userChoiceC, computerChoiceC) => {
     console.log(`User Choice ${userChoice}`);
     console.log(`Computer Choice ${computerChoice}`);
     if (userChoice === computerChoice) {
-      return "It's a tie!";
+      return "tie";
     } else if (
       (userChoice === "rock" && computerChoice === "scissors") ||
       (userChoice === "paper" && computerChoice === "rock") ||
       (userChoice === "scissors" && computerChoice === "paper")
     ) {
-      return "You win!";
+      return "user";
     } else {
-      return "Computer wins!";
+      return "computer";
     }
   }
 };
