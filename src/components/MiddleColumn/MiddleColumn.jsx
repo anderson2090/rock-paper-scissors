@@ -9,6 +9,7 @@ const MiddleColumn = () => {
 
   return (
     <div className={styles.main}>
+      {isPlaying && <p className={styles.text}>Choose One</p>}
       <Hand />
       {!isPlaying && (
         <Button
