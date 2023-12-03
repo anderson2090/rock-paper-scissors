@@ -9,3 +9,8 @@ export const userChoiceAtom = atom({
   key: "userChoiceAtom",
   default: null,
 });
+
+export const computerChoiceAtom = atom({
+  key: "computerChoiceAtom",
+  default: null,
+});

@@ -3,14 +3,22 @@ import styles from "./Finger.module.css";
 import stylesRed from "./FingerRed.module.css";
 import VerticleLine from "../VerticleLine/VerticleLine";
 import { useRecoilState } from "recoil";
-import { isPlayingStateAtom, userChoiceAtom } from "../atoms/atoms";
+import {
+  computerChoiceAtom,
+  isPlayingStateAtom,
+  userChoiceAtom,
+} from "../atoms/atoms";
+import { computersChoice } from "../../utils/utils";
 const Finger = ({ pImgSrc, pImgAlt, sImgSrc, sImgAlt, text }) => {
   const [isPlaying, setPlaying] = useRecoilState(isPlayingStateAtom);
   const [userChoice, setUserChoice] = useRecoilState(userChoiceAtom);
+  const [computerChoice, setComputerChoice] =
+    useRecoilState(computerChoiceAtom);
 
   const clickHandler = () => {
     if (isPlaying) {
       setUserChoice(text);
+      setComputerChoice(computersChoice());
     }
   };
 
